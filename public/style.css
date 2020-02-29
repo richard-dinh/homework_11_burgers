@@ -1,0 +1,22 @@
+.title {
+  text-align: center;
+}
+
+.imageStyle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  max-width: 10%;
+  height: auto;
+}
+
+body {
+  background-color: #24939e;
+}
+
+.buttonStyle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
