@@ -23,7 +23,7 @@ router.get('/burgers/devoured', (request, response) => {
 })
 
 //create a burger
-router.put('/burgers', (request, response) => {
+router.post('/burgers', (request, response) => {
   createBurger(request.body, () =>{
     response.sendStatus(200)
   })
