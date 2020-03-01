@@ -10,16 +10,22 @@ const Index = props => {
       <h1 className="title" >Eat Dat Burger</h1>
       <div className = "container">
         <div className="row">
-          <div className = "col-md-3"id = "undevoured">
+          <div className = "col-md-3 burgerHead"id = "undevoured">
             {/* Undevoured burgers here */}
+            <h3>Undevoured</h3>
+            <hr></hr>
+            <div className="undevoured"></div>
 
           </div>
           <div className = "col-md-6" id = "inputForm">
             {/* Input Form here */}
             <Form />
           </div>
-          <div className="col-md-3" id="devoured">
+          <div className="col-md-3 burgerHead" id="devoured">
             {/* Devoured burgers here */}
+            <h3>Devoured</h3>
+            <hr></hr>
+            <div className = "devoured"></div>
 
           </div>
         </div>
