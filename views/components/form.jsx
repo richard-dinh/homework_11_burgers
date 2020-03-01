@@ -9,7 +9,7 @@ const Form = () => {
         <br></br>
         <div className="form-group form-check">
           <input type="checkbox" className="form-check-input" id="isDevoured" />
-          <label class="form-check-label" htmlFor="isDevoured">Is Devoured?</label>
+          <label className="form-check-label" htmlFor="isDevoured">Is Devoured?</label>
         </div>
         <button id = "submit" type="button" className="btn btn-dark buttonStyle" >Submit</button>
         <br></br>
