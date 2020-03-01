@@ -1,6 +1,6 @@
 const {createConnection} = require('mysql2')
 
-const connection
+let connection
 
 if (process.env.JAWSDB_URL) {
   connection = createConnection(process.env.JAWSDB_URL)
