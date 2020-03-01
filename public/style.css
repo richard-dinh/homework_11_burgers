@@ -33,3 +33,8 @@ body {
 .spanStyle {
   float: right;
 }
+
+.message {
+  color: red;
+  text-align: center;
+}

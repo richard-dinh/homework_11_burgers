@@ -1,11 +1,13 @@
 let undevoured = document.getElementById('undevoured')
 let devoured = document.getElementById('devoured')
-
+let message = document.getElementById('message')
 //render undevoured Burgers
 const renderBurgers = () => {
   // empty out list before rendering
   undevoured.innerHTML = ''
   devoured.innerHTML = ''
+  //empty out message
+  message.innerHTML=''
   //render undevoured burgers
   axios.get('/api/burgers/undevoured')
     .then(({ data }) => {
@@ -65,7 +67,20 @@ document.addEventListener('click', event =>{
       .catch(error => console.error(error))
     }else{
       //if not delete, then submit
-      console.log('submit')
+      //checking if user did not input any burger
+      if (document.getElementById('burgerInput').value===''){
+        document.getElementById('message').textContent = 'Invalid Input. Please enter a burger.'
+      }else{
+        axios.post('/api/burgers', { burger_name: document.getElementById('burgerInput').value, devoured: document.getElementById('isDevoured').checked})
+        .then(() => {
+          //empty out user input
+          document.getElementById('burgerInput').value=''
+          //uncheck isDevoured box
+          document.getElementById('isDevoured').checked = false
+          renderBurgers()
+        })
+        .catch(error => console.error(error))
+      }
     }
   }
   
