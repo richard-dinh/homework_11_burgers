@@ -13,7 +13,9 @@ const renderBurgers = () => {
         let burgerNode = document.createElement('a')
         burgerNode.classList.add("list-group-item", "list-group-item-action")
         burgerNode.setAttribute('id', `${burger.burger_id}`)
-        burgerNode.textContent = burger.burger_name
+        burgerNode.innerHTML = `
+        ${burger.burger_name} <span class = "spanStyle"><button type="button" class="btn btn-danger btn-sm delete">x</button></span>
+        `
         //giving the element an attribute equal to the devoured value in the db
         burgerNode.dataset.isDevoured = burger.devoured
         undevoured.append(burgerNode)
@@ -28,7 +30,9 @@ const renderBurgers = () => {
         let burgerNode = document.createElement('a')
         burgerNode.classList.add("list-group-item", "list-group-item-action")
         burgerNode.setAttribute('id', `${burger.burger_id}`)
-        burgerNode.textContent = burger.burger_name
+        burgerNode.innerHTML = `
+        ${burger.burger_name} <span class = "spanStyle"><button type="button" class="btn btn-danger btn-sm delete">x</button></span>
+        `
         //giving the element an attribute equal to the devoured value in the db
         burgerNode.dataset.isDevoured = burger.devoured
         devoured.append(burgerNode)
@@ -38,9 +42,9 @@ const renderBurgers = () => {
 }
 
 document.addEventListener('click', event =>{
+  let target = event.target
   //checks if an a tag is clicked
-  if (event.target.tagName === 'A') {
-    let target = event.target
+  if (target.tagName === 'A') {
     //pass in the id of the burger into the api call
     axios.put(`/api/burgers/${target.id}`, {devoured: !parseInt(target.dataset.isDevoured)})
     .then(() => {
@@ -48,6 +52,18 @@ document.addEventListener('click', event =>{
     })
     .catch(error => console.error(error))
   }
+  //checks if a button is clicked
+  else if(target.tagName ==='BUTTON'){
+    event.preventDefault()
+    if(target.classList.contains('delete')){
+      //check if delete button is pressed
+      console.log('delete')
+    }else{
+      //if not delete, then submit
+      console.log('submit')
+    }
+  }
+  
 
 })
 renderBurgers()

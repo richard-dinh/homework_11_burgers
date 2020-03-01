@@ -29,3 +29,7 @@ body {
 .burgerHead {
   text-align: center;
 }
+
+.spanStyle {
+  float: right;
+}
