@@ -10,23 +10,28 @@ const Index = props => {
       <h1 className="title" >Eat Dat Burger</h1>
       <div className = "container">
         <div className="row">
-          <div className = "col-md-3 burgerHead"id = "undevoured">
+          <div className = "col-md-3 burgerHead">
             {/* Undevoured burgers here */}
             <h3>Undevoured</h3>
             <hr></hr>
-            <div className="undevoured"></div>
+            <div id="undevoured" className="list-group">
+              {/* <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+              <button href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button> */}
+            </div>
 
           </div>
           <div className = "col-md-6" id = "inputForm">
             {/* Input Form here */}
             <Form />
           </div>
-          <div className="col-md-3 burgerHead" id="devoured">
+          <div className="col-md-3 burgerHead">
             {/* Devoured burgers here */}
             <h3>Devoured</h3>
             <hr></hr>
-            <div className = "devoured"></div>
-
+            <div id = "devoured" className="list-group">
+              {/* <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+              <button href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button> */}
+            </div>
           </div>
         </div>
       </div>
