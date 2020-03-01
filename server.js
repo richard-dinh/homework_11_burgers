@@ -12,9 +12,4 @@ app.use(express.static(join(__dirname, 'public')))
 
 app.use(require('./routes'))
 
-// route for homepage
-app.get('/', (request, response) => {
-  response.render('index')
-})
-
 app.listen(process.env.PORT || 3000)
