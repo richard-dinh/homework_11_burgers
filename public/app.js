@@ -57,7 +57,12 @@ document.addEventListener('click', event =>{
     event.preventDefault()
     if(target.classList.contains('delete')){
       //check if delete button is pressed
-      console.log('delete')
+      console.log(target.parentNode.parentNode)
+      axios.delete(`/api/burgers/${target.parentNode.parentNode.id}`)
+      .then(() => {
+        renderBurgers()
+      })
+      .catch(error => console.error(error))
     }else{
       //if not delete, then submit
       console.log('submit')
