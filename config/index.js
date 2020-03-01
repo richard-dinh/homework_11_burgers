@@ -3,7 +3,7 @@ const {createConnection} = require('mysql2')
 const connection
 
 if (process.env.JAWSDB_URL) {
-  connection = createConnection(proccess.env.JAWSDB_URL)
+  connection = createConnection(process.env.JAWSDB_URL)
 }else{
   connection = createConnection({
     host: 'localhost',
